@@ -50,8 +50,7 @@ async function handleEvent(event) {
                     const sendStart = { "text": START_MESSAGE };
                     return handleText(sendStart, event.replyToken, event.source);
                 default:
-                    replyText(event.replyToken, 'ビーコン圏外');
-                    break;
+                    return;
             }
             break;
         default:

@@ -68,7 +68,7 @@ function handleText(message, replyToken, event_source) {
     const message_text = message.text;
     console.log('message text: ' + message_text);
     if (message_text === START_MESSAGE) {
-        const f_message = generateFortuneMessage(user_data.current_index, q);
+        const f_message = generateFortuneMessage();
         return client.replyMessage(
             replyToken,
             f_message

@@ -1,0 +1,9 @@
+[build]
+    command = "npm run build"
+    functions = "functions"
+    publish = "images"
+
+[build.environment]
+    CHANNEL_SECRET="XXXXXXXXXXXXXXXXXXXXXXXXXX"
+    CHANNEL_ACCESS_TOKEN="XXXXXXXXXXXXXXXXXXXXXXXX"
+    NETLIFY_URL="XXXXXXXXXXXXXXXXXX"

@@ -1,0 +1,20 @@
+{
+  "name": "m5-linebeacon-fortune",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "netlify-lambda serve ./src",
+    "build": "netlify-lambda build ./src"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@line/bot-sdk": "^6.8.4",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "netlify-lambda": "^1.6.3",
+    "serverless-http": "^2.3.2"
+  }
+}

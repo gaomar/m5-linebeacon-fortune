@@ -98,8 +98,7 @@ function generateFortuneMessage() {
 
     const fortuneIndex = Math.floor(Math.random() * fortune_list.length);
     const fortuneText = fortune_list[fortuneIndex];
-    const imageURL = `${process.env.NETLIFY_URL}/images/${fortuneText}.png`;
-    console.log("imageURL="+imageURL);
+    const imageURL = `${process.env.NETLIFY_URL}/${fortuneText}.png`;
     const message_text = fortuneWord_list[fortuneIndex];
     const message = {
         "type": "bubble",

@@ -39,7 +39,9 @@ async function handleEvent(event) {
                 // unknown message
                 default:
                     replyText(event.replyToken, 'よく分かりませんでした');
+                    break;
             }
+            break;
         case 'beacon':
             const beaconType = event.beacon;
             switch (beaconType.type) {
@@ -48,7 +50,9 @@ async function handleEvent(event) {
                     return handleText(START_MESSAGE, event.replyToken, event.source);
                 default:
                     replyText(event.replyToken, 'ビーコン圏外');
+                    break;
             }
+            break;
         default:
             throw new Error(`Unknown event: ${JSON.stringify(event)}`);
     }

@@ -45,6 +45,7 @@ async function handleEvent(event) {
             switch (beaconType.type) {
                 case 'enter':
                     // 占い開始
+                    return handleText(START_MESSAGE, event.replyToken, event.source);
                 default:
                     replyText(event.replyToken, 'ビーコン圏外');
             }

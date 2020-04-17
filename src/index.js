@@ -64,9 +64,7 @@ function replyText (token, texts) {
 
 // handle TextMessage
 function handleText(message, replyToken, event_source) {
-    console.log('handleText function called!');
     const message_text = message.text;
-    console.log('message text: ' + message_text);
     if (message_text === START_MESSAGE) {
         const f_message = generateFortuneMessage();
         return client.replyMessage(
@@ -107,10 +105,6 @@ function generateFortuneMessage() {
           "url": imageURL,
           "size": "md",
           "aspectMode": "fit",
-          "action": {
-            "type": "uri",
-            "uri": "https://linecorp.com"
-          },
           "align": "center",
           "margin": "xxl",
           "gravity": "center",

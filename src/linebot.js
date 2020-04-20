@@ -18,7 +18,7 @@ const app = express();
 // constants
 const START_MESSAGE = 'スタート';
 
-router.post("/linebot", line.middleware(config), (req, res) => {
+router.post("/", line.middleware(config), (req, res) => {
     Promise.all(req.body.events.map(handleEvent))
     .then(() => res.end())
     .catch(err => {
@@ -101,7 +101,7 @@ function generateFortuneMessage() {
 
     const fortuneIndex = Math.floor(Math.random() * fortune_list.length);
     const fortuneText = fortune_list[fortuneIndex];
-    const imageURL = `${process.env.NETLIFY_URL}/${fortuneText}.png`;
+    const imageURL = `${process.env.NETLIFY_URL}/images/${fortuneText}.png`;
     const message_text = fortuneWord_list[fortuneIndex];
     const message = {
         "type": "bubble",
@@ -143,6 +143,6 @@ function generateFortuneMessage() {
 }
 
 // サーバを起動する
-app.use('/.netlify/functions/index', router);
+app.use('/.netlify/functions/linebot', router);
 module.exports = app;
 module.exports.handler = serverless(app);
